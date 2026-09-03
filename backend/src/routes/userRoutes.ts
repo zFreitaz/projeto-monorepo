@@ -1,6 +1,5 @@
-import { Router, Request, Response } from "express";
-import { UserController } from "../controllers/UserController";
-import { User } from "../models/User";
+import { Router } from 'express';
+import { UserController } from '../controllers/UserController';
 
 const router = Router();
 
@@ -11,4 +10,4 @@ router.post('/', UserController.create);
 router.put('/:id', UserController.update);
 router.delete('/:id', UserController.delete);
 
-export { router as userRoutes }
+export { router as userRoutes };

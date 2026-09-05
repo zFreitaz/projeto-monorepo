@@ -48,6 +48,11 @@ jobs:
           cd backend
           pnpm run format:check
 
+      - name: 7. Checagem de Tipagem Backend (tsc --noEmit)
+        run: |
+          cd backend
+          pnpm run type-check
+
       - name: 7. Validar Tipos e Compilar o Backend (Express)
         run: |
           cd backend

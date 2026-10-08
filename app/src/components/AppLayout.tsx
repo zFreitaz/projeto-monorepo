@@ -7,9 +7,14 @@ export function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <header className="bg-white border-b px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-6">
+        {/* Lado Esquerdo: apenas o título */}
+        <div>
           <span className="font-bold text-slate-800">Sistema Web</span>
-          <nav className="flex gap-4 text-sm font-medium text-slate-600">
+        </div>
+
+        {/* Lado Direito: Navegação + Usuário + Logout */}
+        <div className="flex items-center gap-6 text-sm">
+          <nav className="flex gap-4 font-medium text-slate-600">
             <Link to="/dashboard" className="hover:text-blue-600">
               Painel
             </Link>
@@ -17,9 +22,7 @@ export function AppLayout() {
               Perfil
             </Link>
           </nav>
-        </div>
 
-        <div className="flex items-center gap-4 text-sm">
           <span className="text-slate-600 font-medium">
             {user?.nome || user?.email}
           </span>

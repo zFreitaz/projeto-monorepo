@@ -52,9 +52,9 @@ export function validateUserInput(input: Partial<UserInput>): ValidationResult {
     );
   }
 
-  const validRoles: readonly string[] = ['admin', 'aluno', 'professor'];
-  if (input.role && !validRoles.includes(input.role as string)) {
-    errors.push('O perfil de acesso informado é inválido.');
+  const validRoles = ['admin', 'aluno', 'professor'];
+  if (input.role && !validRoles.includes(input.role)) {
+    errors.push('O Perfil de acesso informado é inválido.');
   }
 
   return {

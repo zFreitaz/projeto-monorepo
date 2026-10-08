@@ -10,17 +10,17 @@ export function authMiddleware(
   try {
     const authHeader = req.headers.authorization;
 
-    // VERIFICAR SE O TOKEN FOI ENVIADO NO FORMATO "BEARER <TOKEN>"
+    // Verifica se o token foi enviado no formato "Bearer <token>"
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ erro: 'Token não fornecido.' });
     }
 
     const token = authHeader.split(' ')[1];
 
-    // VALIDA AS ASSINATURA MATEMATICA DO TOKEN COM A CHAVE SECRETA
+    // Valida a assinatura matematica do token com a chave secreta
     const usuarioDecodificado = jwt.verify(token, JWT_SECRET);
 
-    // SALVA OS DADOS DO USUARIO NA REQUISIÇAO
+    // Salva os dados do usuario na requisição
     (req as any).user = usuarioDecodificado;
 
     return next();

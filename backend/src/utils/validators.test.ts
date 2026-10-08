@@ -2,15 +2,17 @@ import { describe, it, expect } from 'vitest';
 import {
   isValidEmail,
   isStrongPassword,
-  validateUserInput,
   UserInput,
+  validateUserInput,
+  //validateUserInput,
+  //UserInput,
 } from './validators';
 
 describe('Módulo de Validação: validators.ts', () => {
   describe('Função isValidEmail', () => {
     it('Deve retornar true para um endereço de e-mail válido AAA( Arrange, Act, Assert)', () => {
       // 1. Arrange (Preparar)
-      const validEmail = 'aluno.fatec@sp.gov.br';
+      const validEmail = 'aluno.fatec@so.gov.br';
 
       // 2. Act (Agir)
       const result = isValidEmail(validEmail);
@@ -20,7 +22,7 @@ describe('Módulo de Validação: validators.ts', () => {
     });
 
     it('deve retornar false para e-mails com formato inválido', () => {
-      // Arrange & Act & Assert
+      // Arrange & Act
       expect(isValidEmail('usuario_sem_arroba.com')).toBe(false);
       expect(isValidEmail('usuario@dominio')).toBe(false);
       expect(isValidEmail('')).toBe(false);
@@ -113,7 +115,7 @@ describe('Módulo de Validação: validators.ts', () => {
       // Assert
       expect(validation.isValid).toBe(false);
       expect(validation.errors).toContain(
-        'O perfil de acesso informado é inválido.',
+        'O Perfil de acesso informado é inválido.',
       );
     });
   });

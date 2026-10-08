@@ -1,5 +1,5 @@
 ### Health Check
-GET  http://localhost:3000/api/health
+GET http://localhost:3000/api/health
 
 ### Listar Usuarios
 GET http://localhost:3000/api/users
@@ -14,17 +14,17 @@ Content-Type: application/json
     "password": "12345678"
 }
 
-### Buscar Usuário por Id
+### Buscar Usuario por ID
 GET http://localhost:3000/api/users/1
 
-### Atualizar Usuário
+### Atualizar Usuario
 PUT http://localhost:3000/api/users/1
 Content-Type: application/json
 
 {
-    "nome": "Mariana Souza Silva",
-    "email": "mariana.silva@email.com"
+  "nome": "Mariana Souza Silva",
+  "email": "mariana.silva@email.com"
 }
 
-### Excluir o Uusário
+### Excluir Usuario
 DELETE http://localhost:3000/api/users/1
